@@ -144,18 +144,22 @@ public class FormularioSimulacionImpl extends ManageWaits implements FormularioS
         Thread.sleep(2000);
         String botonConfirmar = "/html/body/div[1]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[3]/div/div[4]/table/tbody/tr/td[1]/span/span/span/span[3]";
         this.driver.findElement(By.xpath(botonConfirmar)).click();
-        Thread.sleep(10000);
         return Boolean.TRUE;
     }
 
     public Boolean obtenerDatosDeLaSolicitud()throws Exception{
-
-        String xpathDatosVendendor = "/html/body/div[1]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[2]/div/div[3]/div[3]/div/div/div[1]/div/div[1]/div/span[3]";
-        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, xpathDatosVendendor, 10L, 2L)
-                .click();
+        logger.debug("Inicia espera para obtener el dato de la solicitud");
+        Thread.sleep(10000);
+        logger.debug("Finaliza espera para obtener el dato de la solicitud");
+        try {
+            String xpathDatosVendendor = "/html/body/div[1]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[2]/div/div[3]/div[3]/div/div/div[1]/div/div[1]/div/span[3]";
+            waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, xpathDatosVendendor, 10L, 2L)
+                    .click();
+        }catch (Exception e){
+            logger.error(e.getMessage());
+        }
         String xpathInputIdSolicitud = "/html/body/div[1]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[2]/div/div[3]/div[3]/div/div/div[1]/div/div[2]/div/div/table/tbody/tr[1]/td[2]/div/table/tbody/tr/td[1]/div/div/input";
-        String id = waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, xpathInputIdSolicitud, 10L, 2L)
-                .getAttribute("value");
+        String id = this.driver.findElement(By.xpath(xpathInputIdSolicitud)).getAttribute("value");
         logger.info("Id de la solicitud: " + id);
         return Boolean.TRUE;
     }

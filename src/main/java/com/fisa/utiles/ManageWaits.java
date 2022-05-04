@@ -32,7 +32,7 @@ public class ManageWaits {
         });
         WebDriverWait waitT = new WebDriverWait(driver, timeOut);
         waitT.until(ExpectedConditions.elementToBeClickable(usernameElement));
-        Thread.sleep(1000);
+        Thread.sleep(500);
         return usernameElement;
     }
 }

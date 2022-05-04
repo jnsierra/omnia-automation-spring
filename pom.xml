@@ -14,7 +14,7 @@
 	<name>omnia-automation-spring</name>
 	<description>Automatización de prueba de login</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 		<testcontainers.version>1.16.2</testcontainers.version>
 	</properties>
 	<dependencies>
