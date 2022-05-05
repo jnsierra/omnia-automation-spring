@@ -4,6 +4,7 @@ import com.fisa.service.*;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -19,6 +20,7 @@ public class ExecuteTestImpl implements ExecuteTest {
     private SelectRoleAndInstitution selectRoleAndInstitution;
     private IngresarSimulacion ingresarSimulacion;
     private FormularioSimulacion formularioSimulacion;
+    private Integer idTransaccion;
 
     @Value("${random.long}")
     private Long random;
@@ -30,20 +32,22 @@ public class ExecuteTestImpl implements ExecuteTest {
             ,LoginAccess loginAccess
             ,SelectRoleAndInstitution selectRoleAndInstitution
             ,IngresarSimulacion ingresarSimulacion
-            ,FormularioSimulacion formularioSimulacion) {
+            ,FormularioSimulacion formularioSimulacion
+            ,@Qualifier("IdTransaccional") Integer idTransaccion ) {
         this.driver = driver;
         this.URL = url;
         this.loginAccess = loginAccess;
         this.selectRoleAndInstitution = selectRoleAndInstitution;
         this.ingresarSimulacion = ingresarSimulacion;
         this.formularioSimulacion = formularioSimulacion;
+        this.idTransaccion = idTransaccion;
     }
 
     @EventListener(ApplicationReadyEvent.class)
     @Override
     public void executeTest() {
         try {
-            logger.info("Id de la transaccion: ".concat(random.toString()));
+            logger.info("Id de la transaccion Selenium: ".concat(idTransaccion.toString()));
             logger.debug("Se inicia automatizacion");
             Boolean success = initializeBrowser();
             if(success){
@@ -65,7 +69,7 @@ public class ExecuteTestImpl implements ExecuteTest {
                             success = formularioSimulacion.formularioSimulacion();
                             logger.debug("Finalizamos la realización del formulario inicial");
                             if(success){
-                                logger.info("Finalizo la transaccion ".concat(random.toString()));
+                                logger.info("Finalizo la transaccion selenium " + idTransaccion);
                                 this.driver.quit();
                             }
                         }

@@ -62,7 +62,7 @@ public class IngresarSimulacionImpl extends ManageWaits implements IngresarSimul
     }
 
     public Boolean ingresarIdentificacion() throws Exception{
-        WebElement input = waitElement(this.driver,TYPE_FIND_ELEMENT.xpath,"/html/body/div[1]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[2]/div/div[3]/div[3]/div/div/div[2]/div/div[2]/div/div/table/tbody/tr[1]/td[4]/div/table/tbody/tr/td[1]/div/div/input", 6L, 2L);
+        WebElement input = waitElement(this.driver,TYPE_FIND_ELEMENT.xpath,"/html/body/div[1]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[2]/div/div[3]/div[3]/div/div/div[2]/div/div[2]/div/div/table/tbody/tr[1]/td[4]/div/table/tbody/tr/td[1]/div/div/input", 18L, 2L);
         input.sendKeys(documento);
         input.sendKeys(Keys.TAB);
         return Boolean.TRUE;

@@ -6,4 +6,6 @@ public interface DriverBrowser {
 
     WebDriver getDriver();
 
+    Integer getIdTransaccional();
+
 }

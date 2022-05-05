@@ -87,21 +87,21 @@ public class FormularioSimulacionImpl extends ManageWaits implements FormularioS
         waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, marcaButton, 6L, 2L)
                 .click();
         String confirmationButton = "/html/body/div[15]/div[2]/div[2]/div[2]/div[2]/div/div/div/div[3]/table/tbody/tr[1]/td[1]/table/tbody/tr/td[1]/span/span/span/span[3]";
-        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, confirmationButton, 6L, 2L)
+        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, confirmationButton, 18L, 2L)
                 .click();
         return Boolean.TRUE;
     }
     public Boolean seleccionarModelo()throws Exception{
         String seleccionXPath = "/html/body/div[1]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[3]/div/div[3]/div[3]/div/div/div[2]/div/div[2]/div/div/table/tbody/tr[2]/td[4]/div/table/tbody/tr/td[2]/span/span/span/span[1]";
-        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, seleccionXPath, 6L, 2L)
+        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, seleccionXPath, 18L, 2L)
                 .click();
 
         String radioButton = "/html/body/div[16]/div[2]/div[2]/div[2]/div[2]/div/div/div/div[2]/div/div/div/div/div[1]/table/tbody/tr/td[1]/div";
-        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, radioButton, 6L, 2L)
+        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, radioButton, 18L, 2L)
                 .click();
 
         String buttonXpath = "/html/body/div[16]/div[2]/div[2]/div[2]/div[2]/div/div/div/div[3]/table/tbody/tr[1]/td[1]/table/tbody/tr/td[1]/span/span/span/span[3]";
-        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, buttonXpath, 6L, 2L)
+        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath, buttonXpath, 18L, 2L)
                 .click();
         return Boolean.TRUE;
     }
@@ -129,7 +129,7 @@ public class FormularioSimulacionImpl extends ManageWaits implements FormularioS
     }
 
     public Boolean simulacionPlazo()throws Exception{
-        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath,"/html/body/div[1]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[3]/div/div[3]/div[3]/div/div/div[4]/div/div[2]/div/div/table[2]/tbody/tr[2]/td/div/div/div[2]/div/div/div/div/div[2]/table/tbody/tr/td[7]/div/div/input", 120L, 10L)
+        waitElement(this.driver,TYPE_FIND_ELEMENT.xpath,"/html/body/div[1]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[3]/div/div[3]/div[3]/div/div/div[4]/div/div[2]/div/div/table[2]/tbody/tr[2]/td/div/div/div[2]/div/div/div/div/div[2]/table/tbody/tr/td[7]/div/div/input", 220L, 5L)
                 .click();
 
         String ingresos = "/html/body/div[1]/div[2]/div[2]/div/div[3]/div/div/div[3]/div[3]/div/div[3]/div[3]/div/div/div[5]/div/div[2]/div/div/table/tbody/tr[1]/td[2]/div/table/tbody/tr/td[1]/div/div/div[2]/input[1]";
